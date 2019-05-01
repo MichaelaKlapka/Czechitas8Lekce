@@ -5,8 +5,13 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +25,21 @@ public class MainActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.list);
 
-        adapter = new CustomListAdapter(MainActivity.this, new ArrayList<Movie>());
-        listView.setAdapter(adapter);
+        ApiService apiService = RetrofitInstance.getRetrofitInstance().
+                create(ApiService.class);
+        Call<ArrayList<Movie>> call = apiService.getAllMovies();
+        call.enqueue(new Callback<ArrayList<Movie>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Movie>> call, Response<ArrayList<Movie>> response) {
+                //odpoved kterou zpracujeme
+                adapter = new CustomListAdapter(MainActivity.this, response.body());
+                listView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Movie>> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Chyba", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
