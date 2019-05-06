@@ -1,4 +1,4 @@
-package cz.czechitas.janhanak.czechitas7lekce;
+package cz.czechitas.janhanak.czechitas8lekce;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

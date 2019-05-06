@@ -1,10 +1,8 @@
-package cz.czechitas.janhanak.czechitas7lekce;
+package cz.czechitas.janhanak.czechitas8lekce;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.ArrayList;

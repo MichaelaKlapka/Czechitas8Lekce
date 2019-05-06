@@ -1,4 +1,4 @@
-package cz.czechitas.janhanak.czechitas7lekce;
+package cz.czechitas.janhanak.czechitas8lekce;
 
 import android.app.Activity;
 import android.view.LayoutInflater;

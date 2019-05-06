@@ -1,9 +1,8 @@
-package cz.czechitas.janhanak.czechitas7lekce;
+package cz.czechitas.janhanak.czechitas8lekce;
 
 import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
 
 public interface ApiService {
 
